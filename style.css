@@ -1,0 +1,315 @@
+/* [GABUNGAN] Palet Warna dan Gaya Global */
+:root {
+    /* Variabel dari Kalkulator (index11) */
+    --primary-color: #26a69a;
+    --primary-light: #e0f2f1;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --text-color: #495057;
+    --heading-color: #343a40;
+    --border-color: #dee2e6;
+
+    /* Variabel dari Animasi (index77) */
+    --sun-color: #ffc107;
+    --electric-color: #219386;
+    --inactive-color: #e0e0e0;
+    --animation-speed: 1.2s;
+    --pulse-speed: 1.5s;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* --- [START] GAYA DARI KALKULATOR (index11.html) --- */
+.card {
+    border: none;
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.header-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.header-icon i {
+    font-size: 2.5rem;
+}
+
+h1.h2 {
+    color: var(--heading-color);
+    font-weight: 700;
+}
+
+h3.h5 {
+    color: var(--heading-color);
+    font-weight: 600;
+    border-color: var(--primary-light) !important;
+}
+
+.form-control,
+.form-select {
+    background-color: #fdfdff;
+    border: 1px solid var(--border-color);
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(38, 166, 154, 0.2);
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--heading-color);
+}
+
+#calculateBtn {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+}
+
+#calculateBtn:hover {
+    background-color: #219386;
+}
+
+.list-group-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 0.8rem 0;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.badge {
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: var(--primary-color) !important;
+}
+
+.results .alert {
+    background-color: var(--primary-light);
+    border: 1px solid #b2dfdb;
+    border-radius: 0.75rem;
+}
+
+.results .alert-heading {
+    color: var(--primary-color);
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.result-item .value {
+    font-weight: 600;
+    color: var(--heading-color);
+}
+
+.result-item .final-value {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* --- [END] GAYA DARI KALKULATOR (index11.html) --- */
+
+
+/* --- [START] GAYA DARI ANIMASI (index77.html) --- */
+.plts-progress-tracker {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 2rem;
+    /* Memberi jarak dari tombol */
+}
+
+.plts-progress-tracker ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.plts-progress-tracker li {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+.icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border: 4px solid var(--inactive-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: var(--inactive-color);
+    transition: all 0.5s ease;
+}
+
+.step-label {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--inactive-color);
+    transition: color 0.5s ease;
+    max-width: 80px;
+}
+
+.connector {
+    flex-grow: 1;
+    height: 12px;
+    background-color: var(--inactive-color);
+    margin: 0 -15px;
+    position: relative;
+    top: 24px;
+    z-index: 1;
+}
+
+.connector-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    transition: width var(--animation-speed) ease-in-out;
+}
+
+.connector-sunray .connector-fill {
+    background: repeating-linear-gradient(45deg, var(--sun-color), var(--sun-color) 8px, #ffca28 8px, #ffca28 16px);
+    box-shadow: 0 0 8px var(--sun-color);
+    border-radius: 6px;
+}
+
+.connector-electric .connector-fill {
+    background: repeating-linear-gradient(45deg, var(--electric-color), var(--electric-color) 8px, #219386 8px, #4dc7b9 16px);
+    box-shadow: 0 0 8px var(--electric-color);
+    border-radius: 6px;
+}
+
+.animated-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    opacity: 0;
+    z-index: 2;
+    transition: left var(--animation-speed) ease-in-out, opacity 0.3s ease-in-out;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+.connector-sunray .animated-icon {
+    color: var(--sun-color);
+}
+
+.connector-electric .animated-icon {
+    color: var(--electric-color);
+}
+
+li.active .icon-wrapper {
+    animation: pulse var(--pulse-speed) infinite;
+}
+
+li.active .step-label {
+    font-weight: 600;
+}
+
+li.sun.active .icon-wrapper {
+    border-color: var(--sun-color);
+    color: var(--sun-color);
+}
+
+li.sun.active .step-label {
+    color: var(--sun-color);
+}
+
+li.electric.active .icon-wrapper {
+    border-color: var(--electric-color);
+    color: var(--electric-color);
+}
+
+li.electric.active .step-label {
+    color: var(--electric-color);
+}
+
+li.completed .icon-wrapper .icon-main {
+    display: none;
+}
+
+li.completed .icon-wrapper::after {
+    content: '\F26E';
+    /* Bootstrap Icon Check Circle Fill */
+    font-family: 'bootstrap-icons';
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+li.completed .step-label {
+    color: var(--text-color);
+}
+
+li.sun.completed .icon-wrapper {
+    background-color: var(--sun-color);
+    border-color: var(--sun-color);
+}
+
+li.electric.completed .icon-wrapper {
+    background-color: var(--electric-color);
+    border-color: var(--electric-color);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+    }
+
+    70% {
+        box-shadow: 0 0 0 12px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+/* --- [END] GAYA DARI ANIMASI (index77.html) --- */
